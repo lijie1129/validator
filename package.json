@@ -1,0 +1,27 @@
+{
+  "name": "validator",
+  "version": "1.0.0",
+  "description": "Laravel-style validator based on NodeJS",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "standard",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "standard": "^14.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn test"
+    }
+  },
+  "standard": {
+    "globals": [
+      "test",
+      "expect"
+    ]
+  }
+}
