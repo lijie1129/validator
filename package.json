@@ -1,5 +1,5 @@
 {
-  "name": "validator",
+  "name": "validator-simple",
   "version": "1.0.0",
   "description": "Laravel-style validator based on NodeJS",
   "main": "index.js",
