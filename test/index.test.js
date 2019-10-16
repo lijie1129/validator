@@ -41,16 +41,16 @@ test('invalid value of params or schema or both', () => {
 })
 
 test('RULE: string', () => {
-  expect(V({ name: 'jarone' }, { name: 'string' })).toEqual([])
-  expect(V({ name: 1 }, { name: 'string' })).toEqual([{
-    paramName: 'name',
+  expect(V({ foo: { name: 'jarone' } }, { 'foo.name': 'string' })).toEqual([])
+  expect(V({ foo: { name: 1 } }, { 'foo.name': 'string' })).toEqual([{
+    paramName: 'foo.name',
     actualValue: 1,
-    invalidMessage: 'name 必须为字符串类型, 实际值为：1'
+    invalidMessage: 'foo.name 必须为字符串类型, 实际值为：1'
   }])
-  expect(V({ name: 1 }, { name: 'string' }, { language: 'en' })).toEqual([{
-    paramName: 'name',
+  expect(V({ foo: { name: 1 } }, { 'foo.name': 'string' }, { language: 'en' })).toEqual([{
+    paramName: 'foo.name',
     actualValue: 1,
-    invalidMessage: 'name is not string, 1 given.'
+    invalidMessage: 'foo.name is not string, 1 given.'
   }])
 })
 

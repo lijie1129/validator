@@ -1,6 +1,6 @@
 {
   "name": "validator-simple",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Laravel-style validator based on NodeJS",
   "main": "index.js",
   "license": "MIT",
@@ -23,5 +23,8 @@
       "test",
       "expect"
     ]
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2"
   }
 }

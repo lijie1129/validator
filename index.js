@@ -1,6 +1,7 @@
 const T = require('./lib/type.js')
 const InvalidMessages = require('./lib/language.js')
 const Rules = require('./lib/rules.js')
+const get = require('lodash.get')
 
 function validateSingleParamByMultipleRules (name, val, rulesString, allRules, allInvalidMsg, allParams) {
   let result = ''
@@ -58,7 +59,7 @@ function main (params, schema, options = {}) {
 
   for (let i = 0, len = needValidateParamNameList.length; i < len; i++) {
     const name = needValidateParamNameList[i]
-    const val = params[name]
+    const val = get(params, name)
     const rulesString = schema[name]
 
     if (!name || !rulesString || (T.isUndefined(val) && !rulesString.includes('required'))) continue
